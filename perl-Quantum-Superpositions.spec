@@ -1,21 +1,21 @@
 %define upstream_name    Quantum-Superpositions
 %define upstream_version 2.02
 
-Name:       perl-%{upstream_name}
-Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 2
+Name:		perl-%{upstream_name}
+Version:	%perl_convert_version %{upstream_version}
+Release:	3
 
-Summary:    Conjunctive & Disjunctive logic for Perl5
-License:    GPL+ or Artistic
-Group:      Development/Perl
-Url:        http://search.cpan.org/dist/%{upstream_name}
-Source0:    http://www.cpan.org/modules/by-module/Quantum/%{upstream_name}-%{upstream_version}.tar.gz
+Summary:	Conjunctive & Disjunctive logic for Perl5
+License:	GPL+ or Artistic
+Group:		Development/Perl
+Url:		http://search.cpan.org/dist/%{upstream_name}
+Source0:	http://www.cpan.org/modules/by-module/Quantum/%{upstream_name}-%{upstream_version}.tar.gz
 
-BuildRequires: perl(Carp)
-BuildRequires: perl(Class::Multimethods)
-BuildRequires: perl(strict)
-BuildArch: noarch
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
+BuildRequires:	perl-devel
+BuildRequires:	perl(Carp)
+BuildRequires:	perl(Class::Multimethods)
+BuildRequires:	perl(strict)
+BuildArch:	noarch
 
 %description
 The Quantum::Superpositions module adds two new operators to Perl: 'any'
@@ -34,24 +34,29 @@ needs of the algorithm that uses it.
 %setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
-%{__perl} Makefile.PL INSTALLDIRS=vendor
-
+perl Makefile.PL INSTALLDIRS=vendor
 %make
 
 %check
 %make test
 
 %install
-rm -rf %buildroot
 %makeinstall_std
 
-%clean
-rm -rf %buildroot
-
 %files
-%defattr(-,root,root)
 %doc Changes
 %{_mandir}/man3/*
-%perl_vendorlib/*
+%{perl_vendorlib}/*
+
+%changelog
+* Sun Apr 17 2011 Funda Wang <fwang@mandriva.org> 2.20.0-2mdv2011.0
++ Revision: 654290
+- rebuild for updated spec-helper
+
+* Thu May 06 2010 Michael Scherer <misc@mandriva.org> 2.20.0-1mdv2011.0
++ Revision: 542892
+- import perl-Quantum-Superpositions
 
 
+* Thu May 06 2010 cpan2dist 2.02-1mdv
+- initial mdv release, generated with cpan2dist
