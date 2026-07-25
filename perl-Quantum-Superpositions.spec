@@ -1,15 +1,15 @@
 %define upstream_name    Quantum-Superpositions
-%define upstream_version 2.02
+%define upstream_version 2.03
 
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	5
+Version:	%{upstream_version}
+Release:	1
 
 Summary:	Conjunctive & Disjunctive logic for Perl5
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/Quantum/%{upstream_name}-%{upstream_version}.tar.gz
+Url:		https://metacpan.org/dist/Quantum-Superpositions
+Source0:	https://cpan.metacpan.org/authors/id/L/LE/LEMBARK/Quantum-Superpositions-%{upstream_version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
