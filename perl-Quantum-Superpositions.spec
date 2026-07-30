@@ -9,7 +9,7 @@ Summary:	Conjunctive & Disjunctive logic for Perl5
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		https://metacpan.org/dist/Quantum-Superpositions
-Source0:	https://cpan.metacpan.org/authors/id/L/LE/LEMBARK/Quantum-Superpositions-%{upstream_version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/L/LE/LEMBARK/Quantum-Superpositions-2.03.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -49,15 +49,3 @@ perl Makefile.PL INSTALLDIRS=vendor
 %{_mandir}/man3/*
 %{perl_vendorlib}/*
 
-%changelog
-* Sun Apr 17 2011 Funda Wang <fwang@mandriva.org> 2.20.0-2mdv2011.0
-+ Revision: 654290
-- rebuild for updated spec-helper
-
-* Thu May 06 2010 Michael Scherer <misc@mandriva.org> 2.20.0-1mdv2011.0
-+ Revision: 542892
-- import perl-Quantum-Superpositions
-
-
-* Thu May 06 2010 cpan2dist 2.02-1mdv
-- initial mdv release, generated with cpan2dist
