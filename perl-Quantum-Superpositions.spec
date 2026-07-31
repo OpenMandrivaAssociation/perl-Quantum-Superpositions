@@ -3,7 +3,7 @@
 
 Name:		perl-%{upstream_name}
 Version:	2.03
-Release:	12
+Release:	1
 
 Summary:	Conjunctive & Disjunctive logic for Perl5
 License:	GPL+ or Artistic
@@ -36,18 +36,18 @@ needs of the algorithm that uses it.
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
-%make
-
+%make_build
 %check
 # soft: do not fail package on test failures
 set +e
+make test || :
 %make test || :
 
 %install
 %makeinstall_std
 
 %files
-%doc Changes
+%doc Changes META.yml
 %{_mandir}/man3/*
 %{perl_vendorlib}/*
 
