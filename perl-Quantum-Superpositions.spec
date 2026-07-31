@@ -3,7 +3,7 @@
 
 Name:		perl-%{upstream_name}
 Version:	2.03
-Release:	3
+Release:	4
 
 Summary:	Conjunctive & Disjunctive logic for Perl5
 License:	GPL+ or Artistic
